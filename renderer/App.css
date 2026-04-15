@@ -1,0 +1,255 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+body {
+  position: relative;
+  color: white;
+  /* height: 100vh; */
+  /* background: linear-gradient(
+    200.96deg,
+    #fedc2a -29.09%,
+    #dd5789 51.77%,
+    #7a2c9e 129.35%
+  ); */
+  font-family: sans-serif;
+  /* overflow-y: hidden; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  appearance: none;
+  font-size: 1.3rem;
+  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  transition: all ease-in 0.1s;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px;
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+/* body::-webkit-scrollbar, */
+::-webkit-scrollbar{
+  display: none;
+  scrollbar-width: 0;
+  width: 0;
+}
+.Hello {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.main-page {
+  width: 100%;
+  height: 100vh;
+  scrollbar-width: 0;
+}
+.main-div {
+  width: 100%;
+  height: calc(100vh - 35px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+}
+
+.from {
+  max-width: 450px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(248, 249, 250);
+}
+.from h1 {
+  font-weight: bold;
+  color: #1b1c24;
+}
+.from label {
+  font-size: 18px;
+}
+.from input {
+  padding: 10px 8px;
+  outline: none;
+}
+.from input:focus {
+  border-color: #ced4da;
+}
+.form-label {
+  margin-bottom: 0;
+  color: #1b1c24;
+}
+.from input:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.from .submit-btn {
+  padding: 8px 25px;
+  font-size: 20px;
+  width: 100%;
+  margin-top: 15px;
+  background-color: #1b1c24;
+  border: none;
+}
+.from .submit-btn:hover {
+  background-color: #1b1c24;
+  transform: scale(1);
+}
+.logout-page {
+  width: 100%;
+  height: calc(100vh - 35px);
+  overflow: auto;
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+}
+
+.navbarbg {
+  background-color: #a5c6ff !important;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 2px 24px -2px rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+}
+
+.navbarbg h3 {
+  color: #000;
+  font-size: 20px;
+}
+
+.navbarbg button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+}
+.table-header {
+  /* border-width: 2px 2px 1px 2px; */
+  /* border-color: #4e89ee; */
+  /* border-style: solid; */
+  padding: 15px 10px;
+  background-color: #a5c6ff;
+  border-radius: 10px 10px 0 0;
+}
+
+.table-div {
+  background-color: #ffffff3d;
+  border-radius: 10px ;
+}
+.info-box {
+  max-width: 450px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #d7e3ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  margin: auto;
+  /* border: 1px solid #4e89ee; */
+  border-radius:  0 0 10px 10px;
+}
+.table thead tr th {
+  font-size: 20px;
+  border: none;
+  padding: 20px;
+}
+.table tbody td {
+  border: none;
+  font-size: 20px;
+  color: #000;
+  padding: 20px;
+  white-space: nowrap;
+}
+.table tbody tr:nth-child(odd) td {
+  background-color: #8aa7ec7d;
+  color: #000;
+}
+.form-select:focus {
+  border: none;
+  border-color: unset;
+  outline: 0;
+  box-shadow: none;
+}
+.form-select{
+  background-color: #ffffffc2;
+  border: none;
+}
+.container-div {
+  margin-top: 100px;
+  padding: 50px;
+}
+
+.password-form {
+  position: relative;
+}
+.password-form span {
+  position: absolute;
+  right: 12px;
+  top: 40px;
+  cursor: pointer;
+}
+.tostText{
+  text-transform: none;
+}
