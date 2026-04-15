@@ -1,0 +1,56 @@
+.widget ul.hide_more_lists li:nth-of-type(1n+6) { display:none ; }
+div#loader {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.5)url("../../images/loader.svg") no-repeat center center;
+	z-index: 1100;
+	background-size: 120px 120px;
+	display:none;
+}
+.error-message { color:red; font-size:20px;}
+.text-center { text-align:center;}
+.notification span {
+	color: #fff;
+	border-radius: 11px;
+	padding: 15px;    
+}
+
+.notification.success .close-ntf {
+	color: #6bbfa3;
+	background-color:transparent;
+}
+
+.notification.success span {
+	background-color: #6bbfa3;
+}
+
+.notification.error .close-ntf {
+	color: #e63318;
+	background-color: transparent;
+}
+
+.notification.error span {
+	background-color: #e63318;
+}
+
+.notification.info .close-ntf {
+	color: #504e4d;
+}
+
+.notification.info span {
+	background-color: #504e4d;
+}
+
+.notification .close-ntf {
+    background: transparent;
+    border: none;
+    padding: 5px 15px;
+    background-color: #fff;
+    outline: 0;
+    font-size: 22px;
+    cursor: pointer;
+}
+.creator-top .notification span { display:inline; }
