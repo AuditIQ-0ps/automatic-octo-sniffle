@@ -1,0 +1,53 @@
+directories:
+  output: release/build
+  buildResources: assets
+  app: release/app
+productName: Marro App tracker
+appId: com.marroapptracker
+nsis:
+  deleteAppDataOnUninstall: true
+icon: assets/marro-logo.png
+asar: true
+asarUnpack: '**\*.{node,dll}'
+files:
+  - filter:
+      - dist
+      - node_modules
+      - package.json
+afterSign: .erb/scripts/notarize.js
+mac:
+  target:
+    target: default
+    arch:
+      - arm64
+      - x64
+  type: distribution
+  hardenedRuntime: true
+  entitlements: assets/entitlements.mac.plist
+  entitlementsInherit: assets/entitlements.mac.plist
+  gatekeeperAssess: false
+dmg:
+  icon: assets/marro-logo.icns
+  contents:
+    - x: 130
+      'y': 220
+    - x: 410
+      'y': 220
+      type: link
+      path: /Applications
+win:
+  target:
+    - nsis
+linux:
+  target:
+    - AppImage
+  category: Development
+extraResources:
+  - filter:
+      - ./assets/**
+      - ./extraResource/**
+publish:
+  provider: github
+  owner: Marro App Tracker
+  repo: Marro App Tracker
+electronVersion: 20.1.4
