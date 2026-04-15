@@ -1,81 +1,54 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "kreait/laravel-firebase",
+    "description": "A Laravel package for the Firebase PHP Admin SDK",
+    "keywords": ["laravel", "firebase", "fcm", "gcm"],
+    "type": "library",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Jérôme Gamez",
+            "email": "jerome@gamez.name"
+        }
+    ],
     "require": {
-        "php": "^7.3|^8.0",
-        "ext-json": "*",
-        "barryvdh/laravel-dompdf": "^1.0",
-        "doctrine/dbal": "*",
-        "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
-        "intervention/image": "^2.7",
-        "kreait/laravel-firebase": "^3.1",
-        "laravel/framework": "^8.75",
-        "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.4",
-        "laravelcollective/html": "^6.2",
-        "maatwebsite/excel": "^3.1",
-        "mailjet/mailjet-apiv3-php": "^1.5",
-        "rap2hpoutre/laravel-log-viewer": "^2.0",
-        "stripe/stripe-php": "^7.113"
+        "php": "^7.2|^8.0",
+        "kreait/firebase-php": "^5.24",
+        "illuminate/contracts": "^6.0|^7.0|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0",
+        "symfony/cache": "^5.4|^6.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.6",
-        "facade/ignition": "^2.5",
-        "fakerphp/faker": "^1.9.1",
-        "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.10"
+        "orchestra/testbench": "^4.0|^5.0|^6.0",
+        "friendsofphp/php-cs-fixer": "^2.16"
     },
     "autoload": {
-        "files": [
-            "app/Helpers/helper.php"
-        ],
         "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Kreait\\Laravel\\Firebase\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Kreait\\Laravel\\Firebase\\Tests\\": "tests"
         }
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
-        ],
-        "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
-        ]
     },
     "extra": {
+        "branch-alias": {
+            "dev-main": "3.x-dev"
+        },
         "laravel": {
-            "dont-discover": []
+            "providers": [
+                "Kreait\\Laravel\\Firebase\\ServiceProvider"
+            ],
+            "aliases": {
+                "Firebase": "Kreait\\Laravel\\Firebase\\Facades\\Firebase",
+                "FirebaseAuth": "Kreait\\Laravel\\Firebase\\Facades\\FirebaseAuth",
+                "FirebaseDatabase": "Kreait\\Laravel\\Firebase\\Facades\\FirebaseDatabase",
+                "FirebaseDynamicLinks": "Kreait\\Laravel\\Firebase\\Facades\\FirebaseDynamicLinks",
+                "FirebaseFirestore": "Kreait\\Laravel\\Firebase\\Facades\\FirebaseFirestore",
+                "FirebaseMessaging": "Kreait\\Laravel\\Firebase\\Facades\\FirebaseMessaging",
+                "FirebaseRemoteConfig": "Kreait\\Laravel\\Firebase\\Facades\\FirebaseRemoteConfig",
+                "FirebaseStorage": "Kreait\\Laravel\\Firebase\\Facades\\FirebaseStorage"
+            }
         }
-    },
-    "dependencies": {
-        "agora-rtc-sdk-ng": "latest",
-        "agora-rtc-sdk": "latest"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
